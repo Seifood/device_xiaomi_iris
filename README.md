@@ -1,10 +1,1 @@
-# Android device tree for Redmi iris for arm64 (iris)
-
-```
-#
-# Copyright (C) 2022 The Android Open Source Project
-# Copyright (C) 2022 SebaUbuntu's TWRP device tree generator
-#
-# SPDX-License-Identifier: Apache-2.0
-#
-```
+Device config for TWRP Redmi Note 10 JE 5G ( iris )

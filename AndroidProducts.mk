@@ -6,9 +6,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_iris.mk
+    $(LOCAL_DIR)/twrp_iris.mk
 
 COMMON_LUNCH_CHOICES := \
-    omni_iris-user \
-    omni_iris-userdebug \
-    omni_iris-eng
+    twrp_iris-user \
+    twrp_iris-userdebug \
+    twrp_iris-eng
