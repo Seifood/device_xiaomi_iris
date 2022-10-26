@@ -49,31 +49,32 @@ TARGET_OTA_ASSERT_DEVICE := iris
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
 
-# APEX
-DEXPREOPT_GENERATE_APEX_IMAGE := true
-
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := iris
 TARGET_NO_BOOTLOADER := true
 
 # Kernel
-BOARD_KERNEL_BASE := 0x00000000
-BOARD_KERNEL_OFFSET := 0x00008000
-BOARD_KERNEL_TAGS_OFFSET := 0x00000100
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image.gz
-BOARD_KERNEL_IMAGE_NAME := Image
+VENDOR_CMDLINE := "console=ttyMSM0,115200n8 earlycon=msm_geni_serial,0x04C8C00
+0 androidboot.hardware=qcom androidboot.console=ttyMSM0 androidboot.memcg=1 lpm_
+levels.sleep_disabled=1 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=
+0x237 service_locator.enable=1 androidboot.usbcontroller=4e00000.dwc3 swiotlb=0
+loop.max_part=7 cgroup.memory=nokmem,nosocket buildvariant=user reboot=panic_warm androidboot.init_fatal_reboot_target=recovery androidboot.selinux=permissive"
+BOARD_KERNEL_BASE          := 0x00000000
+TARGET_KERNEL_ARCH := arm64
+TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_CLANG_COMPILE := true
+BOARD_KERNEL_IMAGE_NAME := Image
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/iris/kernel
+BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_KERNEL_PAGESIZE := 4096
-BOARD_RAMDISK_OFFSET := 0x01000000
-BOARD_TAGS_OFFSET := 0x00000100
-BOARD_BOOTIMG_HEADER_VERSION := 3
-BOARD_MKBOOTIMG_ARGS += --base $(BOARD_KERNEL_BASE)
+BOARD_BOOT_HEADER_VERSION := 3
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_MKBOOTIMG_ARGS += --kernel_offset $(BOARD_KERNEL_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --pagesize $(BOARD_KERNEL_PAGESIZE)
-BOARD_MKBOOTIMG_ARGS += --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
-BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
-TARGET_FORCE_PREBUILT_KERNEL := true
+BOARD_MKBOOTIMG_ARGS += --vendor_cmdline $(VENDOR_CMDLINE)
+TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/iris/dtb
+BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
+BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/iris/dtbo.img
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 134217728

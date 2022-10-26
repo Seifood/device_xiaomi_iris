@@ -1,1 +1,1 @@
-Device config for TWRP Redmi Note 10 JE 5G ( iris )
+TWRP device tree for Redmi Note 10 JE 5G ( iris )
