@@ -88,6 +88,24 @@ TW_SUPPORT_INPUT_AIDL_HAPTICS := true
 RECOVERY_BINARY_SOURCE_FILES += \
     $(TARGET_OUT_VENDOR_EXECUTABLES)/hw/vendor.qti.hardware.vibrator.service
 
+TARGET_RECOVERY_DEVICE_MODULES += \
+    libandroidicu \
+    libdisplayconfig.qti \
+    libion \
+    vendor.display.config@1.0 \
+    vendor.display.config@2.0
+
+RECOVERY_LIBRARY_SOURCE_FILES += \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
+    $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/libdisplayconfig.qti.so \
+    $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@1.0.so \
+    $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@2.0.so
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilt/libandroidicu.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/libandroidicu.so \
+    $(LOCAL_PATH)/prebuilt/android.hardware.boot@1.0-impl-1.1-qti.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/hw/android.hardware.boot@1.0-impl-1.1-qti.so \
+    $(LOCAL_PATH)/prebuilt/librecovery_updater_msm.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/librecovery_updater_msm.so \
+    $(LOCAL_PATH)/prebuilt/libboot_control_qti.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/libboot_control_qti.so
 
 
 # SHIPPING API
