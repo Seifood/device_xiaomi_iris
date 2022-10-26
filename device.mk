@@ -102,11 +102,10 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@2.0.so
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/libandroidicu.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/libandroidicu.so \
-    $(LOCAL_PATH)/prebuilt/android.hardware.boot@1.0-impl-1.1-qti.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/hw/android.hardware.boot@1.0-impl-1.1-qti.so \
-    $(LOCAL_PATH)/prebuilt/librecovery_updater_msm.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/librecovery_updater_msm.so \
-    $(LOCAL_PATH)/prebuilt/libboot_control_qti.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/libboot_control_qti.so
-
+    $(LOCAL_PATH)/prebuilt/iris/libandroidicu.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/libandroidicu.so \
+    $(LOCAL_PATH)/prebuilt/iris/android.hardware.boot@1.0-impl-1.1-qti.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/hw/android.hardware.boot@1.0-impl-1.1-qti.so \
+    $(LOCAL_PATH)/prebuilt/iris/librecovery_updater_msm.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/librecovery_updater_msm.so \
+    $(LOCAL_PATH)/prebuilt/iris/libboot_control_qti.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/libboot_control_qti.so
 
 # SHIPPING API
 PRODUCT_SHIPPING_API_LEVEL := 30
