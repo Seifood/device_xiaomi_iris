@@ -82,10 +82,6 @@ TW_NO_SCREEN_BLANK := true
 TW_EXCLUDE_APEX := true
 #TW_FRAMERATE := 60
 
-
-# Vibrator
-TW_SUPPORT_INPUT_AIDL_HAPTICS := true
-
 RECOVERY_BINARY_SOURCE_FILES += \
     $(TARGET_OUT_VENDOR_EXECUTABLES)/hw/vendor.qti.hardware.vibrator.service
 
