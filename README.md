@@ -1,4 +1,4 @@
-# Device tree for Redmi Note 10 JE (codename iris)
+# TWRP Device tree for Redmi Note 10 JE (codename iris)
 
 
 ## Device specifications
