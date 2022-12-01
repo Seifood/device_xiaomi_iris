@@ -59,19 +59,6 @@ TARGET_BOOTLOADER_BOARD_NAME := iris
 TARGET_NO_BOOTLOADER := true
 
 # Kernel
-BOARD_KERNEL_CMDLINE += androidboot.console=ttyMSM0
-BOARD_KERNEL_CMDLINE += androidboot.usbcontroller=4e00000.dwc3
-BOARD_KERNEL_CMDLINE += androidboot.fstab_suffix=default
-BOARD_KERNEL_CMDLINE += androidboot.hardware=qcom
-BOARD_KERNEL_CMDLINE += androidboot.memcg=1
-BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
-BOARD_KERNEL_CMDLINE += console=ttyMSM0,115200n8
-BOARD_KERNEL_CMDLINE += earlycon=msm_geni_serial,0x4a90000
-BOARD_KERNEL_CMDLINE += loop.max_part=7
-BOARD_KERNEL_CMDLINE += lpm_levels.sleep_disabled=1
-BOARD_KERNEL_CMDLINE += msm_rtb.filter=0x237
-BOARD_KERNEL_CMDLINE += service_locator.enable=1
-BOARD_KERNEL_CMDLINE += swiotlb=2048
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_OFFSET := 0x00008000
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
